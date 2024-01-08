@@ -1,6 +1,13 @@
-<div>
-    <img src="https://dbdzm869oupei.cloudfront.net/img/posters/preview/91008.png">
-    <h2>Título</h2>
-    <p>Año</p>
+<div class="card">
+    <img src= 'https://image.tmdb.org/t/p/original/{{pelicula?.poster_path}}' alt="">
+    <div class="infoCard">
+        <dl>
+            <dt class="card name">{{pelicula?.title}}</dt>
+            <dd></dd>
+            <dt class="card release_date">Fecha de estreno</dt>
+            <dd class="card date">{{pelicula?.release_date}}</dd>
+        </dl>
+    </div>
+    
 </div>
 

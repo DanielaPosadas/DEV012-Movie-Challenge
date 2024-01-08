@@ -1,5 +1,10 @@
-<app-header></app-header>
-<div>
-    <app-cards-container></app-cards-container>
-</div>
+
+    <app-header></app-header>
+    <div class="card-Container">
+    <app-cards *ngFor="let item of moviesList; let i=index"
+    [pelicula] = item></app-cards>
+    </div>
+    <app-footer class="footer"></app-footer>
+
+
 

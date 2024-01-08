@@ -1,17 +1,46 @@
+
 div {
     display: grid;
     text-align: center;
-    background-color: aquamarine;
-    width: 200px;
+    width: 250px;
+    height: auto;
 }
 
 img {
     justify-content: center;
-    width: 200px;
-    height: 300px;
+    width: 270px;
+    height: 370px;
 }
 
-p {
-    margin-top: auto;
-    font-size: 20px;
+.infoCard {
+    align-items: center;
+    background-color: #006376;
+    width: 270px;
+    height: 170px;
+    border-radius: 0px 0px 20px 0px;
+}
+
+.card {
+    color: #ffffff;
+}
+
+.name{
+    margin: 0px 10px 10px 10px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+}
+
+.release_date {
+    margin: 0px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.date {
+    margin: 0px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
 }
