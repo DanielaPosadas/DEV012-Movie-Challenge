@@ -4,6 +4,7 @@
     <app-cards *ngFor="let item of moviesList; let i=index"
     [pelicula] = item></app-cards>
     </div>
+    <app-paginacion [PActual] = "PaginaActual" [PTotales]="PaginasTotales" (PMovies)="PMovies($event)" (ChangePage)="ChangePage($event)"></app-paginacion>
     <app-footer class="footer"></app-footer>
 
 

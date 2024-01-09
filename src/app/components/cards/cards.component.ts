@@ -7,7 +7,8 @@ import { Peliculas } from 'src/app/interfaces/peliculas';
   styleUrls: ['./cards.component.scss']
 })
 export class CardsComponent implements OnInit {
- @Input() pelicula: Peliculas | undefined;
+  //Input es un decorador. Envía información de padre a hijo (Home->Cards)
+ @Input() pelicula: Peliculas | undefined; //Pelicula es de tipo Peliculas
   constructor() { }
 
   ngOnInit(): void {

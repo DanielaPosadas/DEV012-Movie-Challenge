@@ -1,6 +1,8 @@
 export interface ContainerPeliculas {
     page: number,
     results: Peliculas[],
+    total_pages: number,
+    total_results: number
 }
 
 export interface Peliculas {
