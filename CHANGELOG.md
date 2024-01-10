@@ -17,7 +17,7 @@
 
 - No estaba colocando de manera correcta las interfaces que condicionaban/tipaban las variables de mi petición.
 
-- ## 1.0.1 - 2024-01-09
+## 1.0.1 - 2024-01-09
 
 ### Sprint learnings
 
