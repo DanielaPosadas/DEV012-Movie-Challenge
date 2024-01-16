@@ -1,0 +1,35 @@
+<div class="contenedorFiltros">
+<select class="form-select form-select-sm" aria-label=".form-select-sm example" (change)="GenreSelected($event)">
+    <option selected value="">Filtrar por</option>
+    <option value="28">Acción</option>
+    <option value="12">Aventura</option>
+    <option value="16">Animación</option>
+    <option value="35">Comedia</option>
+    <option value="80">Crimen</option>
+    <option value="99">Documental</option>
+    <option value="18">Drama</option>
+    <option value="10751">Familiar</option>
+    <option value="14">Fantasia</option>
+    <option value="36">Historia</option>
+    <option value="27">Horror</option>
+    <option value="10402">Musica</option>
+    <option value="9648">Misterio</option>
+    <option value="10749">Romance</option>
+    <option value="878">Ciencia Ficción</option>
+    <option value="10770">TV Movie</option>
+    <option value="53">Thriller</option>
+    <option value="10752">Guerra</option>
+    <option value="37">Western</option>
+  </select>
+
+  <select class="form-select form-select-sm" aria-label=".form-select-sm example" (change)="OrderSelected($event)">
+    <option selected value="">Ordenar por</option>
+    <option value="popularity.asc">Menor popularidad</option>
+    <option value="popularity.desc">Mayor popularidad</option>
+    <option value="vote_count.asc">Menos votada</option>
+    <option value="vote_count.desc">Más votada</option>
+    <option value="primary_release_date.asc">Estreno ascendente</option>
+    <option value="primary_release_date.desc">Estreno descendente</option>
+  </select>
+
+</div>

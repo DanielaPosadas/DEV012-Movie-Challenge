@@ -1,5 +1,5 @@
 <div class="card">
-    <img src= 'https://image.tmdb.org/t/p/original/{{pelicula?.poster_path}}' alt="">
+    <img (error)="NotFound($event) "src= 'https://image.tmdb.org/t/p/original/{{pelicula?.poster_path}}' alt="">
     <div class="infoCard">
         <dl>
             <dt class="card name">{{pelicula?.title}}</dt>

@@ -8,7 +8,7 @@ export interface ContainerPeliculas {
 export interface Peliculas {
         adult: boolean,
         backdrop_path: string,
-        genre_ids: Array<string>,
+        genre_ids: Array<number>,
         id: number[],
         original_language: string,
         original_title: string,
@@ -21,4 +21,14 @@ export interface Peliculas {
         vote_average: number,
         vote_count: number
 }
+
+export interface ContainerGenres {
+    genres: Genres[]
+}
+
+export interface Genres {
+            id: number,
+            name: string
+} 
+    
 

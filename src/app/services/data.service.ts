@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Peliculas } from '../interfaces/peliculas';
-import { Observable, map, tap } from 'rxjs';
-import { ContainerPeliculas } from '../interfaces/peliculas';
+import { Peliculas, ContainerPeliculas } from '../interfaces/peliculas';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +19,12 @@ return this.http.get<ContainerPeliculas>(this.URL_API).pipe(
 getPages(page:number):Observable <ContainerPeliculas> {
   return this.http.get<ContainerPeliculas>(`${this.URL_API}&page=${page}`).pipe(
     map((respPages) => {
-      return respPages as ContainerPeliculas})
-  );
+      return respPages as ContainerPeliculas}));
+}
+
+getMovies(GeneroSelectID:string, PaginaActual:number, OrdenOption:string):Observable <Peliculas[]> {
+  return this.http.get<ContainerPeliculas>(`${this.URL_API}&page=${PaginaActual}&sort_by=${OrdenOption}&with_genres=${GeneroSelectID}`).pipe(
+    map((respMovies) => {
+      return respMovies.results as Peliculas[]}))
 }
 }

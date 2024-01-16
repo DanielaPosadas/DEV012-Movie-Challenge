@@ -1,0 +1,30 @@
+.contenedorFiltros {
+    display: flex;
+    justify-content: center;
+    background-color: #003342;
+}
+
+.form-select {  
+    display: flex;
+    text-align: center;
+    font-family: 'Jost', sans-serif;
+    font-size: 22px;
+    width: 240px;
+    height: 40px;
+    margin: 30px 20px 30px 20px;
+    border-radius: 0px 0px 15px 0px;
+    background-color: #5F8493;
+    color: #ffffff;
+}
+
+.form-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Jost', sans-serif;
+    font-size: 20px;
+    width: 150px;
+    height: 40px;
+    margin: 30px 20px 30px 20px;
+    border-radius: 10px 10px 10px 10px;
+}

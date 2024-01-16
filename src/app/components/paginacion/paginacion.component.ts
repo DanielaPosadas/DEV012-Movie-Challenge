@@ -6,10 +6,10 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./paginacion.component.scss']
 })
 export class PaginacionComponent implements OnInit {
-  //Recibimos información del padre al hijo
+  //Recibimos información del padre HOME al hijo
  @Input() PActual: number = 1;
  @Input() PTotales: number = 0;
- //Enviamos información del hijo al padre
+ //Enviamos información del hijo al padre HOME
  @Output() PMovies = new EventEmitter<any>();
  @Output() ChangePage = new EventEmitter<any>();
 
@@ -23,14 +23,13 @@ export class PaginacionComponent implements OnInit {
       this.PActual = this.PActual + 1;
       }
       this.PMovies.emit(this.PActual);
-      console.log("La página actual es ", this.PActual)
   }
+
   prevPage() {
    if (this.PActual > 1) {
           this.PActual = this.PActual - 1;
           this.PMovies.emit(this.PActual);
        }
-       console.log("La página actual es ", this.PActual)
       }
 
   cambiarPage(page:number){

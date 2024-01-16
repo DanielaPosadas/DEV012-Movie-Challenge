@@ -9,6 +9,7 @@ import { HomeComponent } from './views/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PaginacionComponent } from './components/paginacion/paginacion.component';
+import { FiltroOrdenamientoComponent } from './components/filtro-ordenamiento/filtro-ordenamiento.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { PaginacionComponent } from './components/paginacion/paginacion.componen
     HeaderComponent,
     FooterComponent,
     PaginacionComponent,
+    FiltroOrdenamientoComponent,
   ],
   imports: [
     BrowserModule,
