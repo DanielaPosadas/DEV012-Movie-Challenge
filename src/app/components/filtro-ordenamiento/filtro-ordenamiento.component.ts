@@ -1,5 +1,4 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { Peliculas } from 'src/app/interfaces/peliculas';
 
 @Component({
   selector: 'app-filtro-ordenamiento',
@@ -7,8 +6,6 @@ import { Peliculas } from 'src/app/interfaces/peliculas';
   styleUrls: ['./filtro-ordenamiento.component.scss']
 })
 export class FiltroOrdenamientoComponent implements OnInit {
-
-  OrdenOption:string = '';
 
   @Output() GeneroSeleccionado = new EventEmitter<any>();
   @Output() OrdenSeleccionado = new EventEmitter<any>();
