@@ -1,4 +1,5 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-filtro-ordenamiento',
@@ -7,14 +8,20 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class FiltroOrdenamientoComponent implements OnInit {
 
+  optionSelectedFilter: string = '';
+  optionSelectedOrder: string = '';
+
+
   @Output() GeneroSeleccionado = new EventEmitter<any>();
   @Output() OrdenSeleccionado = new EventEmitter<any>();
   @Output() BotonLimpiar = new EventEmitter<any>();
   
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+
+    this.ParametrosURL()
   }
 
   //(change) es un evento del DOM aplicado a mi select, por eso se agrega el $event
@@ -28,10 +35,19 @@ export class FiltroOrdenamientoComponent implements OnInit {
   this.OrdenSeleccionado.emit(event.target.value as string)
   }
 
-  /*PeliculasDefault(event:MouseEvent){
-    this.BotonLimpiar.emit(event)
-    console.log("Presionaste el botón")
-  }*/
+  //Suscribirme a los parametros de URL para recuperar la option filtro/ordenamiento
+  ParametrosURL(){
+    this.route.queryParams.subscribe(resParams => {
+      this.optionSelectedFilter = resParams['genre'];
+      this.optionSelectedOrder = resParams['sortBy'];
+      console.log(resParams['genre'])
+    })
+  }
+
+  PeliculasDefault(){
+    this.optionSelectedFilter = '';
+    this.optionSelectedOrder = '';
+  }
 
 
 }

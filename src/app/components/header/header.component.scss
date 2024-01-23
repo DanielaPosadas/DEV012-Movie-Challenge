@@ -1,11 +1,14 @@
+
+@import '../../../variables.scss';
+
 h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     color: #ffffff;
-    font-size: 70px;
+    font-size: 75px;
     height: 70px;
     margin: 50px;
-    font-weight: 900;
+    font-weight: bold;
 }

@@ -17,7 +17,19 @@ describe('FiltroOrdenamientoComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Debería crear el componente Filtro-Ordenamiento', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Debería devolver el valor 28 al seleccionar Acción ', () => {
+    const valorEsperado = '28';
+    spyOn(component.GeneroSeleccionado, 'emit');
+
+    const selectElement: HTMLSelectElement = fixture.nativeElement.querySelector('select');
+    selectElement.value = valorEsperado;
+    selectElement.dispatchEvent(new Event('change'));
+
+    expect(component.GeneroSeleccionado.emit).toHaveBeenCalledWith(valorEsperado);
+  });
+  
 });

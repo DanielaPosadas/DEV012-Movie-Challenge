@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div class="background-detail">
+    <div class="all-content">
+    <div class="image-container"> 
+        <img src="https://image.tmdb.org/t/p/original/{{MovieDetails?.poster_path}}" alt="">
+    </div>
+    <div class="infoMovie">
+        <h2>{{MovieDetails?.original_title}}</h2>
+        <div class="average">
+            <img class='estrella' src="https://cdn-icons-png.flaticon.com/128/171/171895.png" alt="">
+            <p class='p votos'>{{MovieDetails?.vote_average}} | {{MovieDetails?.vote_count}} votos</p>
+        </div>
+        <dl>
+            <dt>Fecha de estreno</dt>
+            <dd>{{MovieDetails?.release_date}}</dd>
+            <dt>Géneros</dt>
+            <dd *ngFor="let gender of Genders" class="generos">{{gender.name}}</dd>
+        </dl>
+        <div class="sinopsis">
+            <p>{{MovieDetails?.overview}}</p>
+        </div>
+    </div>
+    </div>
+</div>
+

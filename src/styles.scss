@@ -1,4 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@import './variables.scss';
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    background: linear-gradient(#001C25, #000508);
+    display: flex;
+    justify-content: center;
+    background-color: $background-color;
+    overflow-x: hidden;
 }
