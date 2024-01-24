@@ -1,5 +1,29 @@
 # Changelog
 
+## 1.0.3 - 2024-01-23
+
+### Sprint learnings
+
+- Comprendí como es la navegación entre rutas.
+- Analicé mi código para depurarlo con respecto a la paginación en la vista de home.
+- Implementé y aprendí a asignar queryParams a la URL y a pasar parámetros entre rutas.
+- He reforzado aún más el concepto de los observables y la suscripción a ellos.
+- Aprendí la implementación del ngModel en elementos HTML y el enlace bidireccional de datos.
+- He reforzado la implementación de la directiva ngFor.
+
+### Added
+
+- Se agrega la vista de detalle con queryparams y asigna queryparams a la URl de vista home.
+- Se crea la vista de detalle con: poster, votos, promedio de votos, fecha de estreno, géneros y una descripción.
+- Al cambiar a la vista de detalle y volver, el filtro/ordenamiento se mantiene.
+- La paginación se mantiene al cambiar a la vista de detalle y volver.
+
+### Fixed
+
+- Depuré home para eliminar los métodos que finalmente dejé de utilizar con respecto a la paginación, lo mismo en el servicio.
+- Utilizo una sola petición para el filtro, el ordenamiento, la paginación y otro para el detalle de la película.
+- Eliminé las condicionales if en los métodos de paginación y agregué un parámetro en los queryParams por default cuando no hay valor seleccionado en el ordenamiento.
+
 ## 1.0.2 - 2024-01-16
 
 ### Sprint learnings
