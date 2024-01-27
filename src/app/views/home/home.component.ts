@@ -13,16 +13,25 @@ export class HomeComponent implements OnInit {
   PaginaActual: number = 0;
   GeneroSelectID: string = '';
   OrdenOption: string = '';
+  CleanFilter:string = '';
+  CleanOrder:string = '';
 
   constructor( private dataService: DataService, private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
       this.PasarParametrosURL()
+      this.getMoviesData()
       this.getMoviesFilters(this.GeneroSelectID, this.PaginaActual, this.OrdenOption);
       this.GuardarParametrosURL(this.GeneroSelectID, this.OrdenOption, this.PaginaActual);
   }
 
- //MÉTODO PARA TRAER LAS PELÍCULAS
+  //MÉTODO PARA TRAER LAS PELÍCULAS POR DEFAULT
+  getMoviesData(){
+    this.dataService.getAllMovies().subscribe((respData) => {
+    this.moviesList = respData});
+  }
+
+ //MÉTODO PARA TRAER LAS PELÍCULAS CON PARÁMETROS
   getMoviesFilters(GeneroSelectID:string, PaginaActual:number, OrdenOption:string){
     this.dataService.getMovies(GeneroSelectID, PaginaActual, OrdenOption).subscribe((respMovies) => {
     this.moviesList = respMovies;
@@ -61,7 +70,6 @@ export class HomeComponent implements OnInit {
   //QUERYPARAMS PARA MANTENER FILTROS Y ORDENAMIENTOS
   GuardarParametrosURL(GeneroSelectID:string, OrdenOption:string, PaginaActual:Number){
     this.router.navigate([''], {
-      relativeTo: this.route,
       queryParams: {'genre': GeneroSelectID, 'sortBy': OrdenOption, 'page': PaginaActual},
     })
   }
@@ -72,6 +80,15 @@ export class HomeComponent implements OnInit {
       this.GeneroSelectID = respParams['genre'] || '';
       this.OrdenOption = respParams['sortBy'] || 'popularity.desc';
       this.PaginaActual = respParams['page'] || 1;
+    })
+  }
+
+  //LIMPIAR BOTÓN
+  ParamsCleanBotton(event:any){
+    console.log('click al botón', event)
+    this.getMoviesData();
+    this.router.navigate([''], {
+      queryParams: {'genre': '', 'sortBy': 'popularity.desc', 'page': 1},
     })
   }
 

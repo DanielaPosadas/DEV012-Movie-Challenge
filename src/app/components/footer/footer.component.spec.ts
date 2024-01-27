@@ -21,4 +21,8 @@ describe('FooterComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should create a <p> with value "Desarrollado por Daniela Posadas"', () => {
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('p').textContent).toContain('Desarrollado por Daniela Posadas');
+  });
 });

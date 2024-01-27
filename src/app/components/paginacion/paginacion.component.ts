@@ -26,8 +26,6 @@ export class PaginacionComponent implements OnInit {
       this.PMovies.emit(this.PActual);
   }
 
-  
-
   prevPage() {
    if (this.PActual > 1) {
           this.PActual = this.PActual - 1;
@@ -36,6 +34,7 @@ export class PaginacionComponent implements OnInit {
       }
 
   cambiarPage(page:number){
+    this.PActual = page;
      this.ChangePage.emit(page)
   }
     

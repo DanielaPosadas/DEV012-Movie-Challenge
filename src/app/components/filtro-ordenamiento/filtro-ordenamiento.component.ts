@@ -1,5 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Peliculas } from 'src/app/interfaces/peliculas';
 
 @Component({
   selector: 'app-filtro-ordenamiento',
@@ -11,16 +12,14 @@ export class FiltroOrdenamientoComponent implements OnInit {
   optionSelectedFilter: string = '';
   optionSelectedOrder: string = '';
 
-
   @Output() GeneroSeleccionado = new EventEmitter<any>();
   @Output() OrdenSeleccionado = new EventEmitter<any>();
-  @Output() BotonLimpiar = new EventEmitter<any>();
+  @Output() ParamsCleanBotton = new EventEmitter<any>();  
   
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-
     this.ParametrosURL()
   }
 
@@ -40,13 +39,13 @@ export class FiltroOrdenamientoComponent implements OnInit {
     this.route.queryParams.subscribe(resParams => {
       this.optionSelectedFilter = resParams['genre'];
       this.optionSelectedOrder = resParams['sortBy'];
-      console.log(resParams['genre'])
     })
   }
 
-  PeliculasDefault(){
-    this.optionSelectedFilter = '';
-    this.optionSelectedOrder = '';
+  PeliculasDefault(event:MouseEvent){
+      this.optionSelectedFilter = '',
+      this.optionSelectedOrder = '',
+    this.ParamsCleanBotton.emit(event)
   }
 
 

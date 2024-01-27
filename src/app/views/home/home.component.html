@@ -1,6 +1,6 @@
 
     <app-header></app-header>
-    <app-filtro-ordenamiento (GeneroSeleccionado)="GeneroSeleccionado($event)" (OrdenSeleccionado)="OrdenSeleccionado($event)"></app-filtro-ordenamiento>
+    <app-filtro-ordenamiento (GeneroSeleccionado)="GeneroSeleccionado($event)" (OrdenSeleccionado)="OrdenSeleccionado($event)" (ParamsCleanBotton)="ParamsCleanBotton($event)"></app-filtro-ordenamiento>
     <div class="card-Container">
     <app-cards class="app-cards" *ngFor="let item of moviesList; let i=index" [pelicula] = item></app-cards>
     </div>

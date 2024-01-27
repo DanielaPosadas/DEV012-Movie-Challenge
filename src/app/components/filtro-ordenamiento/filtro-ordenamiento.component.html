@@ -1,5 +1,5 @@
 <div class="contenedorFiltros">
-<select class="form-select form-select-sm" aria-label=".form-select-sm example" (change)="GenreSelected($event)" [(ngModel)]="optionSelectedFilter">
+<select class="form-select filter" aria-label=".form-select-sm example" (change)="GenreSelected($event)" [(ngModel)]="optionSelectedFilter">
     <option selected value="">Filtrar por</option>
     <option value="28">Acción</option>
     <option value="12">Aventura</option>
@@ -22,7 +22,7 @@
     <option value="37">Western</option>
   </select>
 
-  <select class="form-select form-select-sm" aria-label=".form-select-sm example" (change)="OrderSelected($event)" [(ngModel)]="optionSelectedOrder">
+  <select class="form-select order" aria-label=".form-select-sm example" (change)="OrderSelected($event)" [(ngModel)]="optionSelectedOrder">
     <option selected value="">Ordenar por</option>
     <option value="popularity.asc">Menor popularidad</option>
     <option value="popularity.desc">Mayor popularidad</option>
@@ -32,6 +32,6 @@
     <option value="primary_release_date.desc">Estreno descendente</option>
   </select>
 
-  <button (click)="PeliculasDefault()" class="form-button">Limpiar</button>
+  <button (click)="PeliculasDefault($event)" class="form-button">Limpiar</button>
 
 </div>

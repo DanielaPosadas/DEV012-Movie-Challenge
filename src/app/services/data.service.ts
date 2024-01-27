@@ -7,16 +7,15 @@ import { Observable, map } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  //URL_API:string = 'https://api.themoviedb.org/3/discover/movie?api_key=68cb6c0f124ef52c1af4b53d4ecf2ec7';
   URL_API:string = 'https://api.themoviedb.org/3';
   API_KEY:string = 'api_key=68cb6c0f124ef52c1af4b53d4ecf2ec7';
   constructor( private http: HttpClient) { }
 
-getPages(page:number):Observable <ContainerPeliculas> {
-  return this.http.get<ContainerPeliculas>(`${this.URL_API}/discover/movie?${this.API_KEY}&page=${page}`).pipe(
-    map((respPages) => {
-      return respPages as ContainerPeliculas}));
-}
+getAllMovies():Observable <Peliculas[]> { 
+  return this.http.get<ContainerPeliculas>(`${this.URL_API}/discover/movie?${this.API_KEY}`).pipe(
+    map((resp) => {
+      return resp.results as Peliculas[]}))
+    }
 
 getMovies(GeneroSelectID:string, PaginaActual:number, OrdenOption:string):Observable <Peliculas[]> {
   return this.http.get<ContainerPeliculas>(`${this.URL_API}/discover/movie?${this.API_KEY}&page=${PaginaActual}&sort_by=${OrdenOption}&with_genres=${GeneroSelectID}`).pipe(
