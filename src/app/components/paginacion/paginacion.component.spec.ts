@@ -23,7 +23,6 @@ describe('PaginacionComponent', () => {
 
   it('should return a number less than 5, nextPage()', () => {
     component.PActual = 1;
-    component.PTotales = 5;
     component.nextPage();
     expect(component.PActual).toBeLessThan(5);
   });

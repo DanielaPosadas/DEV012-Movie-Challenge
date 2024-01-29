@@ -55,7 +55,7 @@ describe('DataService', () => {
   });
 
   afterEach(() =>{
-    httpMock.verify();
+    httpMock.verify(); //verifica que no haya solicitudes pendientes al final de cada prueba
   })
 
   it('should be create a service', () => {
@@ -76,8 +76,8 @@ describe('DataService', () => {
     expect(respMovies).toEqual(mockPeliculas);
     })
 
-    const req = httpMock.expectOne(mockURL);
-    req.flush(expectedResponse);
+    const req = httpMock.expectOne(mockURL); //Se espera que realice una solicitud HTTP a la URL correcta.
+    req.flush(expectedResponse); //flush se utiliza para simular la respuesta esperada.
 });
 
 it('should bring an array of movies from api TMDB with filter/order/page, getMovies()', () => {

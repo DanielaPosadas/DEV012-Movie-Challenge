@@ -136,7 +136,9 @@ describe('HomeComponent', () => {
     const valuePage = 1;
     const valueOrder = 'popularity.desc';
     const routerSpy = spyOn(routerMock, 'navigate');
-    component.ParamsCleanBotton(valueID);
+    const event = dispatchEvent(new MouseEvent('click'));
+    
+    component.ParamsCleanBotton(event);
     expect(routerSpy).toHaveBeenCalledWith([''], {queryParams: {'genre': valueID, 'sortBy': valueOrder, 'page': valuePage}});
   });
 

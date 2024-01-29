@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
 })
 export class PaginacionComponent implements OnInit {
   //Recibimos información del padre HOME al hijo
- @Input() PActual: number = 1;
- @Input() PTotales: number = 5;
+ PActual: number = 1;
+ PTotales: number = 5;
  //Enviamos información del hijo al padre HOME
  @Output() PMovies = new EventEmitter<any>();
  @Output() ChangePage = new EventEmitter<any>();
