@@ -1,11 +1,11 @@
 # Changelog
 
-## 1.0.3 - 2024-01-29
+## 1.0.5 - 2024-01-29
 
 ### Added
 - Se agregaron detalles finales a la estructura de algunas pruebas unitarias finalizándolas al 100%, al igual que el proyecto.
   
-## 1.0.3 - 2024-01-26
+## 1.0.4 - 2024-01-26
 
 ### Sprint learnings
 
