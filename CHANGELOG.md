@@ -1,5 +1,31 @@
 # Changelog
 
+## 1.0.3 - 2024-01-29
+
+### Added
+- Se agregaron detalles finales a la estructura de algunas pruebas unitarias finalizándolas al 100%, al igual que el proyecto.
+  
+## 1.0.3 - 2024-01-26
+
+### Sprint learnings
+
+- Comprendí y reforzaré aún más la creación de test unitarios con jasmine y karma.
+- Aprendí y seguiré reforzando la implementación de mocks y espías, así como el uso de matchers para las pruebas unitarias.
+- Reforcé aún más las funcionalidades del router y del activatedRoute para agregar y obtener parámetros de la URL.
+- He reforzado aún más el concepto de los observables y la suscripción a ellos.
+- Reforcé la implementación del ngModel y la interacción que tiene con elementos del DOM.
+- Entendí y apliqué la implementación de otra directiva de atributo ngClass para mejorar la UI del paginador.
+
+### Added
+
+- Se agregan los test unitarios de componentes y servicios casi al 100%.
+- Se agrega un botón de limpiar funcional que limpia los filtros y los parámetros de la URL al dar click.
+
+### Fixed
+
+- Finalmente se agregó otra petición dentro del servicio para que trajera todas las películas por default y poder reiniciar la lista de películas al dar click al botón limpiar.
+- Mejoró la funcionalidad del paginador al agregar una directiva de atributo (ngClass) para mostrar la página seleccionada.
+
 ## 1.0.3 - 2024-01-23
 
 ### Sprint learnings
